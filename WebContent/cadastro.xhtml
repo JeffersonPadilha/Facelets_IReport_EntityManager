@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+	<ui:composition template="/template.xhtml">
+		<ui:define name="conteudo">
+			<p:panel header="Cadastro de Produtos">
+				<h:form id="formcadprod">
+				<p:growl for="formcadprod" />
+					<p:panelGrid columns="2">
+						
+						<p:outputLabel value="Nome" for="nome"/> 
+						<p:inputText id="nome" size="30" value="#{prodmb.produto.nome}"/>
+						
+						<p:outputLabel value="Fabricante" for="fabric" />
+						<p:selectOneMenu id="fabric" value="#{prodmb.produto.fabricante}">
+							<f:selectItem itemLabel="Dell" itemValue="Dell" />
+							<f:selectItem itemLabel="HP" itemValue="HP" />
+							<f:selectItem itemLabel="Sony" itemValue="Sony" />
+						</p:selectOneMenu>
+						
+						<p:outputLabel value="QTD" for="qtd" />
+						<p:inputText id="qtd" size="10" value="#{prodmb.produto.qtd}" />
+						
+						<p:outputLabel value="Preço" for="preco" />
+						<p:inputText id="preco" size="10" value="#{prodmb.produto.preco}" />
+						
+					</p:panelGrid>
+					<p:commandButton icon="ui-icon-disk" update="formcadprod" action="#{prodmb.cadastrar}" />
+				</h:form>
+			</p:panel>
+			
+		</ui:define>		
+	</ui:composition>	
+
+
+</html>

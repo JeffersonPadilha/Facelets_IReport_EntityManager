@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+	<ui:composition template="/template.xhtml">
+		<ui:define name="conteudo">
+			<p:panel header="Consulta aos Produtos">
+			<h:form id="formcons">
+				<p:dataTable id="tabelaprod" value="" var="">
+					
+					<p:column headerText="Codigo">
+						<h:outputText value="#{prod.codigo}" />
+					</p:column>
+					
+					<p:column headerText="Nome">
+						<h:outputText value="#{prod.nome}" />
+					</p:column>
+					
+					<p:column headerText="Fabricante">
+						<h:outputText value="#{prod.fabricante}" />
+					</p:column>
+					
+					<p:column headerText="QTD">
+						<h:outputText value="#{prod.qtd}" />
+					</p:column>
+					
+					<p:column headerText="Preço">
+						<h:outputText value="#{prod.preco}" />
+					</p:column>
+					
+				</p:dataTable>
+			</h:form>
+			</p:panel>
+		</ui:define>		
+	</ui:composition>	
+
+</html>
